@@ -20,18 +20,27 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-[#0d0d0d] text-white py-16 px-6 md:px-20">
+    <section
+      id="contact"
+      className="bg-[#0d0d0d] text-white py-16 px-6 md:px-20"
+    >
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#5479f7] mb-4">Let’s Connect</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#5479f7] mb-4">
+            Let’s Connect
+          </h2>
           <p className="text-gray-400 text-lg">
-            Have a question, idea, or opportunity? Reach out through the form below, and we’ll respond promptly.
+            Have a question, idea, or opportunity? Reach out through the form
+            below, and we’ll respond promptly.
           </p>
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="bg-[#1a1a1a] rounded-xl shadow-xl p-8 space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[#1a1a1a] rounded-xl shadow-xl p-8 space-y-6"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"

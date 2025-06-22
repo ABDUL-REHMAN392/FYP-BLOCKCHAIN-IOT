@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const location = useLocation();
-  const isDashboard = location.pathname === '/dashboard';
+  const isDashboard = location.pathname === "/dashboard";
 
   return (
     <nav className="fixed top-0 left-0 w-full md:w-[80%] z-50">
@@ -22,12 +22,24 @@ const Navbar = () => {
             {/* Desktop Links - Only if not on dashboard */}
             {!isDashboard && (
               <div className="hidden md:flex space-x-6 text-white font-medium">
-                <a href="#featuers" className="hover:text-[#5479f7]">Features</a>
-                <a href="#work" className="hover:text-[#5479f7]">How it Works</a>
-                <a href="#system-diagram" className="hover:text-[#5479f7]">System Diagram</a>
-                 <a href="#faq" className="hover:text-blue-400">FAQ</a>
-                <a href="#about" className="hover:text-[#5479f7]">About</a>
-                <a href="#contact" className="hover:text-[#5479f7]">Contact</a>
+                <a href="#featuers" className="hover:text-[#5479f7]">
+                  Features
+                </a>
+                <a href="#work" className="hover:text-[#5479f7]">
+                  How it Works
+                </a>
+                <a href="#system-diagram" className="hover:text-[#5479f7]">
+                  System Diagram
+                </a>
+                <a href="#faq" className="hover:text-blue-400">
+                  FAQ
+                </a>
+                <a href="#about" className="hover:text-[#5479f7]">
+                  About
+                </a>
+                <a href="#contact" className="hover:text-[#5479f7]">
+                  Contact
+                </a>
               </div>
             )}
 
@@ -46,12 +58,24 @@ const Navbar = () => {
         {!isDashboard && menuOpen && (
           <div className="md:hidden px-6 py-4 backdrop-blur-md bg-black/60 border-t border-white/10 text-white">
             <div className="flex flex-col space-y-3 font-medium">
-              <a href="#featuers" className="hover:text-blue-400">Features</a>
-              <a href="#work" className="hover:text-blue-400">How it Works</a>
-              <a href="#system-diagram" className="hover:text-blue-400">System Diagram</a>
-              <a href="#faq" className="hover:text-blue-400">FAQ</a>
-              <a href="#about" className="hover:text-blue-400">About</a>
-              <a href="#contact" className="hover:text-blue-400">Contact</a>
+              <a href="#featuers" className="hover:text-blue-400">
+                Features
+              </a>
+              <a href="#work" className="hover:text-blue-400">
+                How it Works
+              </a>
+              <a href="#system-diagram" className="hover:text-blue-400">
+                System Diagram
+              </a>
+              <a href="#faq" className="hover:text-blue-400">
+                FAQ
+              </a>
+              <a href="#about" className="hover:text-blue-400">
+                About
+              </a>
+              <a href="#contact" className="hover:text-blue-400">
+                Contact
+              </a>
             </div>
           </div>
         )}

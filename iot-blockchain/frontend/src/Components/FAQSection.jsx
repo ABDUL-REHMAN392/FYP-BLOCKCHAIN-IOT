@@ -38,23 +38,25 @@ const FAQSection = () => {
   return (
     <section id="faq" className="bg-black py-12 px-6 md:px-16">
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-3xl font-bold text-[#5479f7] mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-[#5479f7] mb-4">
+          Frequently Asked Questions
+        </h2>
         <p className="text-gray-400 text-lg">
-          Find answers to common questions about device registration, security, data flow, and more.
+          Find answers to common questions about device registration, security,
+          data flow, and more.
         </p>
       </div>
-      
+
       <div className="max-w-3xl mx-auto space-y-4">
         {faqs.map((item, i) => (
-          <div
-            key={i}
-            className="bg-gray-800 rounded-lg"
-          >
+          <div key={i} className="bg-gray-800 rounded-lg">
             <button
               className="w-full flex justify-between items-center p-4 focus:outline-none"
               onClick={() => toggle(i)}
             >
-              <span className="text-white text-lg font-medium">{item.question}</span>
+              <span className="text-white text-lg font-medium">
+                {item.question}
+              </span>
               <span className="text-[#5479f7] text-xl">
                 {openIndex === i ? "−" : "+"}
               </span>

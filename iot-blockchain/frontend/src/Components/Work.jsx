@@ -13,11 +13,13 @@ const steps = [
   },
   {
     title: "Sends fake sensor data",
-    description: "If the device is ON, it sends simulated temperature and humidity data to the blockchain.",
+    description:
+      "If the device is ON, it sends simulated temperature and humidity data to the blockchain.",
   },
   {
     title: "Sends data to Node-RED",
-    description: "The same data is POSTed to Node-RED via HTTP for visualization.",
+    description:
+      "The same data is POSTed to Node-RED via HTTP for visualization.",
   },
   {
     title: "Node-RED updates live charts",
@@ -31,7 +33,8 @@ const Work = () => {
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-[#5479f7]">How It Works</h2>
         <p className="mt-4 text-lg text-gray-400">
-          From smart contracts to real-time dashboards — here’s how everything connects.
+          From smart contracts to real-time dashboards — here’s how everything
+          connects.
         </p>
       </div>
 
@@ -53,9 +56,7 @@ const Work = () => {
                 <h3 className="text-2xl font-semibold text-[#5479f7]">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-gray-400 text-md">
-                  {step.description}
-                </p>
+                <p className="mt-2 text-gray-400 text-md">{step.description}</p>
               </div>
             </div>
           ))}

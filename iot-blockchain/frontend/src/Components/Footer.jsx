@@ -9,8 +9,9 @@ const Footer = () => {
         <div>
           <h3 className="text-white text-2xl font-bold mb-4">DecentraSense</h3>
           <p className="text-sm leading-relaxed">
-            A decentralized platform that combines IoT with blockchain to enable secure device control,
-            real-time monitoring, and transparent data logging via smart contracts.
+            A decentralized platform that combines IoT with blockchain to enable
+            secure device control, real-time monitoring, and transparent data
+            logging via smart contracts.
           </p>
         </div>
 
@@ -18,16 +19,34 @@ const Footer = () => {
         <div>
           <h4 className="text-white text-xl font-semibold mb-4">Navigation</h4>
           <ul className="space-y-3 text-sm">
-            <li><a href="#features" className="hover:text-white transition">Key Features</a></li>
-            <li><a href="#system-diagram" className="hover:text-white transition">System Diagram</a></li>
-            <li><a href="#faq" className="hover:text-white transition">FAQs</a></li>
-            <li><a href="#add-device" className="hover:text-white transition">Add Device</a></li>
+            <li>
+              <a href="#features" className="hover:text-white transition">
+                Key Features
+              </a>
+            </li>
+            <li>
+              <a href="#system-diagram" className="hover:text-white transition">
+                System Diagram
+              </a>
+            </li>
+            <li>
+              <a href="#faq" className="hover:text-white transition">
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#add-device" className="hover:text-white transition">
+                Add Device
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Right - Contact & Social */}
         <div>
-          <h4 className="text-white text-xl font-semibold mb-4">Connect with Us</h4>
+          <h4 className="text-white text-xl font-semibold mb-4">
+            Connect with Us
+          </h4>
           <div className="flex space-x-6 text-xl">
             <a
               href="https://github.com/ABDUL-REHMAN392/FYP-BLOCKCHAIN-IOT"
@@ -52,7 +71,15 @@ const Footer = () => {
               <FaEnvelope />
             </a>
           </div>
-          <p className="mt-4 text-sm">Email: <a href="mailto:your-email@example.com" className="hover:text-white">your-email@example.com</a></p>
+          <p className="mt-4 text-sm">
+            Email:{" "}
+            <a
+              href="mailto:your-email@example.com"
+              className="hover:text-white"
+            >
+              your-email@example.com
+            </a>
+          </p>
         </div>
       </div>
 

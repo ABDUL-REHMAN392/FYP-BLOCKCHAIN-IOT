@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
 import { Toaster, toast } from "react-hot-toast";
-import Header from "../Components/Header"; 
+import Header from "../Components/Header";
 import AddDeviceForm from "../Components/AddDeviceForm";
 import Loader from "../Components/Loader";
 import contractABI from "../abi.json";
@@ -36,7 +36,10 @@ export default function App() {
         const web3 = new Web3(window.ethereum);
         await window.ethereum.request({ method: "eth_requestAccounts" });
         const accs = await web3.eth.getAccounts();
-        const contractInstance = new web3.eth.Contract(contractABI, CONTRACT_ADDRESS);
+        const contractInstance = new web3.eth.Contract(
+          contractABI,
+          CONTRACT_ADDRESS
+        );
         setAccount(accs[0]);
         setContract(contractInstance);
       } catch {
@@ -51,13 +54,21 @@ export default function App() {
     setLoading(true);
     const known = [
       "0xf3cf41d4C1628C11FE836C893552E0C9CF6F8782",
-      "0x675043D2E7f92F2ce43dA05C7196fDFC835f9e10"
+      "0x675043D2E7f92F2ce43dA05C7196fDFC835f9e10",
     ];
     const res = [];
     for (let addr of known) {
       try {
         const d = await contractInstance.methods.getDevice(addr).call();
-        if (d[0]) res.push({ address: addr, name: d[1], status: d[2], temperature: d[3], humidity: d[4], timestamp: d[5] });
+        if (d[0])
+          res.push({
+            address: addr,
+            name: d[1],
+            status: d[2],
+            temperature: d[3],
+            humidity: d[4],
+            timestamp: d[5],
+          });
       } catch (e) {
         console.error(e);
         toast.error(`Fetch failed: ${addr}`);
@@ -68,10 +79,13 @@ export default function App() {
   }
 
   const addDevice = async () => {
-    if (!newDevice.address || !newDevice.name) return toast.error("Enter all fields.");
+    if (!newDevice.address || !newDevice.name)
+      return toast.error("Enter all fields.");
     try {
       setTxLoading(true);
-      await contract.methods.addDevice(newDevice.address, newDevice.name).send({ from: account });
+      await contract.methods
+        .addDevice(newDevice.address, newDevice.name)
+        .send({ from: account });
       toast.success("Device added!");
       setNewDevice({ address: "", name: "" });
       fetchDevices(contract);
@@ -85,7 +99,9 @@ export default function App() {
   const toggleDevice = async (address, status) => {
     try {
       setTxLoading(true);
-      await contract.methods.toggleDevice(address, Number(status) === 0).send({ from: account });
+      await contract.methods
+        .toggleDevice(address, Number(status) === 0)
+        .send({ from: account });
       toast.success("Toggled successfully.");
       fetchDevices(contract);
     } catch {
@@ -95,11 +111,12 @@ export default function App() {
     }
   };
 
-  const confirmRemove = address => {
-    if (window.confirm("Are you sure you want to remove this device?")) removeDevice(address);
+  const confirmRemove = (address) => {
+    if (window.confirm("Are you sure you want to remove this device?"))
+      removeDevice(address);
   };
 
-  const removeDevice = async address => {
+  const removeDevice = async (address) => {
     try {
       setTxLoading(true);
       await contract.methods.removeDevice(address).send({ from: account });
@@ -116,8 +133,22 @@ export default function App() {
     <div className="min-h-screen bg-black p-6 text-white font-sans mt-20">
       <Toaster position="top-right" />
       <Header account={account} />
-      <AddDeviceForm newDevice={newDevice} setNewDevice={setNewDevice} addDevice={addDevice} loading={txLoading} />
-      {loading ? <Loader /> : <DeviceList devices={devices} loading={loading} toggleDevice={toggleDevice} confirmRemove={confirmRemove} />}
+      <AddDeviceForm
+        newDevice={newDevice}
+        setNewDevice={setNewDevice}
+        addDevice={addDevice}
+        loading={txLoading}
+      />
+      {loading ? (
+        <Loader />
+      ) : (
+        <DeviceList
+          devices={devices}
+          loading={loading}
+          toggleDevice={toggleDevice}
+          confirmRemove={confirmRemove}
+        />
+      )}
     </div>
   );
 }
