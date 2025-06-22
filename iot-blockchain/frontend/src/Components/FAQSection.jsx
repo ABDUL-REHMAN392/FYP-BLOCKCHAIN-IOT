@@ -57,7 +57,7 @@ const FAQSection = () => {
               <span className="text-white text-lg font-medium">
                 {item.question}
               </span>
-              <span className="text-[#5479f7] text-xl">
+              <span className="text-[#5479f7] text-xl hover:cursor-pointer">
                 {openIndex === i ? "−" : "+"}
               </span>
             </button>
